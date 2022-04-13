@@ -7,6 +7,7 @@ services:
     volumes:
       - /var/minecraft/data:/data
       - /var/minecraft/worlds:/worlds
+      - /etc/minecraft:/config
     ports:
       - 19132:19132/udp
       - 25565:25565
@@ -16,7 +17,7 @@ services:
       TYPE: "PAPER"
       EULA: "TRUE"
       DIFFICULTY: "normal"
-      OPS_FILE: "/etc/minecraft/ops.json"
+      OPS_FILE: "/config/ops.json"
       WORLD: "/worlds/hollow_zone"
       ENABLE_RCON: "true"
       RCON_PASSWORD: ""
