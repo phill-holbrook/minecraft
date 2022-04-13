@@ -1,0 +1,33 @@
+version: "3.4"
+services:
+  minecraft:
+    container_name: minecraft
+    image: itzg/minecraft-server
+    restart: unless-stopped
+    volumes:
+      - /var/minecraft/data:/data
+      - /var/minecraft/worlds:/worlds
+    ports:
+      - 19132:19132/udp
+      - 25565:25565
+      - 28016:28016
+      - 8123:8123
+    environment:
+      TYPE: "PAPER"
+      EULA: "TRUE"
+      DIFFICULTY: "normal"
+      OPS_FILE: "/etc/minecraft/ops.json"
+      WORLD: "/worlds/hollow_zone"
+      ENABLE_RCON: "true"
+      RCON_PASSWORD: ""
+      RCON_PORT: 28016
+      MAX_PLAYERS: "10"
+      MEMORY: "4G"
+      ALLOW_NETHER: "true"
+      ENABLE_COMMAND_BLOCK: "true"
+      VIEW_DISTANCE: 12
+      SEED: ""
+      MODE: "survival"
+      MOTD: ""
+      LEVEL: "Stank 2"
+      ALLOW_FLIGHT: "true"
