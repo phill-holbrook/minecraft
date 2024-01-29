@@ -14,7 +14,7 @@ services:
       - 28016:28016
       - 8123:8123
     environment:
-      TYPE: "PAPER"
+      TYPE: "FORGE"
       EULA: "TRUE"
       DIFFICULTY: "normal"
       OPS_FILE: "/config/ops.json"
